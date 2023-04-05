@@ -1,14 +1,14 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: ReplicaSet # pod 을 관리하기 위해 만들어진 것
 metadata:
   name: echo-rs
 spec:
-  replicas: 1
-  selector:
+  replicas: 4 # pod 을 4개 만들어라
+  selector: # 해당 pod 들을 찾겠다
     matchLabels:
-      app: echo
+      app: echo # 각자 정하는 이름 (고유한 이름 X)
       tier: app
-  template:
+  template: # 템플릿 내용으로 해당 label 가지고 있는 컨테이너 4개 생성하겠다.
     metadata:
       labels:
         app: echo

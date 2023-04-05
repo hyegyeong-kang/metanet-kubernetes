@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Deployment # 생성되면서 replicaset 자동 생성되고 또 pod 도 자동 생성되는 것 -> 배포를 위한 것
 metadata:
   name: echo-deploy
 spec:
@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: app
-        image: dolsam77/echo:v2
+        image: dolsam77/echo:v2 # 버전을 변경하게 되면 일괄적으로 버전 변경해줌
